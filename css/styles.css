@@ -1,0 +1,497 @@
+:root {
+  --black-color: #000000;
+  --light-black-color: #222222;
+  --grey-color: #666666;
+  --dirty-white-color: #FAFAFA;
+  --white-color: E29A17;
+  --linear-color: #E29A17;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FAFAFA;
+}
+
+/* Scollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  /* scroll-size */
+  border-radius: 10px;
+  /* scroll-radius */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+  /* scroll-track (RGB color with opacity) */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: var(--linear-color);
+  /* scroll-thumb-color */
+  border-radius: 10px;
+  /* Same as scroll-radius for consistency */
+}
+
+/* Nav Section */
+
+.navbar-brand {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 800;
+}
+
+.nav-item a {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 600;
+}
+
+.navbar .navbar-nav .nav-item {
+  position: relative;
+  padding: 20px 0px;
+  margin: 0px 20px;
+}
+
+.navbar .navbar-nav .nav-item::after {
+  position: absolute;
+  content: "";
+  background-color: var(--linear-color);
+  width: 0%;
+  transition: 300ms;
+  height: 5px;
+}
+
+.navbar .navbar-nav .nav-item:hover::after {
+  width: 100%;
+}
+
+
+/* Main Section */
+.main {
+  width: 100%;
+  height: 102vh;
+  background-image: url(assets/background.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.main-text,
+.container-a {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.main-text h1 {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 4rem;
+  font-weight: 800;
+  color: #E29A17;
+}
+
+.main-text h3 {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.main-text h6 {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.bt1, .bt2 {
+  height: 55px;
+  width: 135px;
+  font-family: 'League Spartan', sans-serif;
+  outline: none;
+  border-radius: 15px;
+}
+
+.bt1 {
+  background-color: #E29A17;
+  color: white;
+  border: none;
+  transition: all 500ms ease 0s;
+}
+
+.bt2 {
+  background-color: transparent;
+  color: #222222;
+  border-color: #222222;
+  border-style: solid;
+  transition: all 500ms ease 0s;
+  padding-top: 1rem;
+}
+
+.bt1:hover{
+    color:#222222;
+    background-color: #C17E00;
+}
+
+.bt2:hover{
+  background-color: #E29A17;
+  color: white;
+}
+/* About Section */
+
+
+
+.section__text__p1 {
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.section-container {
+  margin-top: 2rem;
+}
+
+.about-details-container {
+  padding-right: 0px;
+  padding-left: 0rem;
+}
+
+.about-pic {
+  border-radius: 2rem;
+  width: 85%;
+}
+
+
+.card-title {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: bold;
+}
+
+.card-subtitle {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1rem;
+}
+
+.card-text {
+  font-family: 'League Spartan', sans-serif;
+  font-size: .8rem;
+  font-weight: normal;
+}
+
+.details-container {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 2rem;
+  border: #E29A17 0.1rem solid;
+  border-color: #E29A17;
+  box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2),
+    0 5px 15px 0 rgba(37, 44, 97, 0.15);
+}
+
+.icon-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  /* Adjust as needed */
+}
+
+.icon-heading img {
+  margin-right: 0.5rem;
+  /* Adjust as needed */
+}
+
+.icon-heading h4 {
+  margin: 5px;
+}
+
+
+
+@media (min-width: 992px) {
+  .about-details-container {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Arrow */
+.to-top {
+  background: #FAFAFA;
+  position: fixed;
+  bottom: 16px;
+  right: 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: #E29A17 0.1rem solid;
+  border-color: #E29A17;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: all .4s;
+}
+
+.to-top::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 60px;
+  left: 0;
+  background: linear-gradient(0deg, #FAFAFA, #fed07c, #E29A17);
+  position: absolute;
+  transition: .35s;
+}
+
+.topicon {
+  position: relative;
+  z-index: 10;
+}
+
+.to-top:hover::after,
+.topicon:hover+.to-top::after {
+  top: 0;
+}
+
+.to-top:hover .topicon,
+.topicon:hover {
+  transform: translateY(-4px);
+  transition: .2s;
+}
+
+.to-top.active {
+  bottom: 32px;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+/* Tooltip */
+
+.custom-tooltop.tooltip > .tooltip-inner {
+  font-family: 'League Spartan', sans-serif;
+  font-size: .8rem;
+}
+
+.custom-tooltip.tooltip > .tooltip-inner {
+  background-color: #E29A17;
+  font-family: 'League Spartan', sans-serif;
+  font-size: .8rem;
+  color: #FAFAFA;
+}
+
+/* Skills Section */
+.skills-container {
+  padding: 1.5rem;
+  background: #FAFAFA;
+  border-radius: 2rem;
+  border: #E29A17 0.1rem solid;
+  border-color: #E29A17;
+  box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2),
+    0 5px 15px 0 rgba(37, 44, 97, 0.15);
+  max-width: 80%;
+  /* Adjusted max-width */
+}
+
+.skills-container .row {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow icons to wrap on smaller screens */
+  justify-content: center;
+}
+
+.icon-class {
+  text-align: center;
+  /* Center icon within its column */
+  margin-bottom: 1rem;
+  /* Add space between icons */
+}
+
+.icon {
+  max-width: 100%;
+  /* Ensure icons are responsive */
+  height: auto;
+  /* Maintain aspect ratio */
+}
+
+/* Contact Section */
+
+.socials {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  /* Align icons to the right */
+}
+
+.socials li {
+  margin-left: 10px;
+  /* Adjust spacing between icons */
+}
+
+.iconbox {
+  background: var(--black-color);
+  width: 3vw;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15%;
+  transition: all 0.3s ease;
+}
+
+.linkedin {
+  width: 25px;
+  height: 25px;
+}
+
+.phone {
+  width: 20px;
+  height: 25px;
+}
+
+.facebook {
+  width: 13px;
+  height: 25px;
+}
+
+.iconbox:hover {
+  transform: scale(1.1);
+  background-color: #E29A17;
+}
+
+.form-container {
+  padding: 2.5rem 2.5rem;
+  padding-bottom: 1rem;
+  background: #FAFAFA;
+  border-radius: 2rem;
+  border: #E29A17 0.1rem solid;
+  border-color: #E29A17;
+  box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2),
+    0 5px 15px 0 rgba(37, 44, 97, 0.15);
+  max-width: 80%;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.form-control {
+  border-radius: 1rem;
+}
+
+.submitbutt {
+  margin-left: 1%;
+}
+
+
+textarea#message {
+  height: 150px;
+}
+
+.bt3 {
+  padding: 10px 20px;
+  background-color: #E29A17;
+  font-family: 'League Spartan', sans-serif;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  height: 75%;
+  width: 100px;
+  transition: all 500ms ease 0s;
+}
+
+.bt3:hover{
+    color:#222222;
+    background-color: #C17E00;
+}
+
+.footertext {
+  font-family: "League Spartan", sans-serif;
+  font-size: 0.8rem;
+}
+
+/* for small screens */
+@media only screen and (max-width: 768px) {
+
+  .main {
+    background-image: url(assets/cp-background.png);
+    height: 100vh;
+  }
+
+  .main-text,
+  .container-a {
+    padding-right: 20px;
+    padding-top: 0rem;
+  }
+
+  .abouttext {
+    text-align: center;
+  }
+
+  .about-pic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .about-details-container {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+
+  .socials {
+    flex-direction: row;
+    /* Change to horizontal layout in mobile */
+    justify-content: center;
+    /* Center icons horizontally in mobile */
+  }
+
+  .subicon {
+    padding-left: 1rem;
+  }
+
+  .socials li {
+    margin-right: 10px;
+    /* Adjust horizontal spacing between icons in mobile */
+    margin-bottom: 0;
+    /* Remove vertical margin in mobile */
+  }
+
+  .iconbox {
+    width: 9vw; /* Adjust as needed */
+    height: 9vw; /* Adjust as needed */
+  }
+ 
+
+  .bt3 {
+    height: 100%;
+  }
+
+  
+
+
+  /* .section-container{ 
+  position: static;
+}
+
+.section-container h1{
+  position: absolute;
+  top: 50rem;
+  text-align: center;
+}*/
+
+}
+
